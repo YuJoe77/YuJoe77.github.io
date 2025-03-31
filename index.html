@@ -134,7 +134,58 @@ var _hmt = _hmt || [];
   <div class="article-content">
     <div class="entry">
       
-          <p>This painting is from Sara, and it is a piece she created during a training session.<img src="/images/1.jpg"></p>
+          <p>This painting is from Sara, and it is a piece she created during a training session.</p>
+<div style="width: 300px; margin: 20px auto; position: relative;">
+  <img id="typora-slideshow" src="https://i.postimg.cc/Nj4rXnpJ/1.jpg" style="width: 100%; opacity: 1; transition: opacity 0.5s ease; border-radius: 8px;">
+  <div style="position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; transform: translateY(-50%);">
+    <button onclick="prevImage()" style="background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; margin-left: 10px; cursor: pointer;">❮</button>
+    <button onclick="nextImage()" style="background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; margin-right: 10px; cursor: pointer;">❯</button>
+  </div>
+</div>
+
+<script>
+// 图片数组（替换为你自己的图片URL）
+const imageList = [
+  "https://i.postimg.cc/Nj4rXnpJ/1.jpg",
+  "https://i.postimg.cc/VksRrXz8/2.jpg",
+  "https://i.postimg.cc/0Nb0Zx6X/3.jpg",
+  "https://i.postimg.cc/RFtQ5RLc/4.jpg"
+];
+let currentIndex = 0;
+const slideImage = document.getElementById("typora-slideshow");
+
+
+function changeImage(index) {
+  slideImage.style.opacity = 0;
+  setTimeout(() => {
+    slideImage.src = imageList[index];
+    slideImage.style.opacity = 1;
+  }, 500); // 这个时间需要和CSS的transition时间一致
+}
+
+function prevImage() {
+  currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
+  changeImage(currentIndex);
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % imageList.length;
+  changeImage(currentIndex);
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       
     </div>
@@ -167,7 +218,7 @@ var _hmt = _hmt || [];
 
   
     
-    <h3 class="article-title"><a href="/2025/03/28/My-First-Blog-Love-sara/"><span>My First Blog Love sara</span></a></h3>
+    <h3 class="article-title"><a href="/2025/03/28/My-First-Blog-Love-sara/"><span>My First Blog - love Sara</span></a></h3>
     
   
 
